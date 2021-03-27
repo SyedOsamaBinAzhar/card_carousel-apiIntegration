@@ -8,13 +8,14 @@
 }
 .carouselRow{
     grid-area: carouselRow;
-    background-color: aqua;
+    background-color: #fff;
 }
 .cardRow{
     grid-area: cardRow;
-    background-color: blue;
+    background-color: #fff;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(25rem,min-content));
     grid-gap: 2rem;
-
+    box-sizing: border-box;
+    padding: 1rem 1rem;
 }

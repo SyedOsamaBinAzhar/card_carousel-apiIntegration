@@ -1,22 +1,61 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
 import Card from '../../Components/Card/Card'
 import Carousel from '../../Components/Carousel/Carousel'
 import "./LandingPage.css"
 
 
+
+
 const LandingPage = () => {
+    const [carouselImages, setcarouselImages] = useState([])
+    const [dogCategories, setdogCategories] = useState([])
+    useEffect(() => {
+
+        fetchData()
+
+        return () => {
+        }
+    }, [])
+
+
+
+    var fetchData = async() => {
+        let response = await axios.get("https://api.thecatapi.com/v1/breeds")
+        for (let index = 1; index < 4; index++) {
+            let image = response.data[index].image.url
+           setcarouselImages((prevState) => ([
+            ...prevState,image
+           ]))
+        }
+        let response2 = await axios.get("https://dog.ceo/api/breeds/list/all")
+        setdogCategories((prevState) => ([
+            ...prevState,...response2.data.message.hound
+        ]))
+    } 
+
+
+    
     return (
         <div>
             <div className="landingPageCont">
                 <div className="carouselRow">
-                    <Carousel/>
+                {
+                carouselImages === "undefined" || carouselImages.length === 0
+                ?
+                null
+                :
+                <Carousel carouselImages={carouselImages}/>
+                }
                 </div>
                 <div className="cardRow flex">
-                    <Card/>
-                    <Card/>
-                    <Card/>
-                    <Card/>
-
+                    {
+                        dogCategories.map((breed,index)=>{
+                            return (
+                                <Card dogBreed={breed} key={index} />
+                            )
+                        })
+                    }
                 </div>
 
             </div>
