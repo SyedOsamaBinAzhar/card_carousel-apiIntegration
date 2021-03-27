@@ -9,6 +9,7 @@
 .carouselRow{
     grid-area: carouselRow;
     background-color: #fff;
+    position: relative;
 }
 .cardRow{
     grid-area: cardRow;
@@ -19,3 +20,18 @@
     box-sizing: border-box;
     padding: 1rem 1rem;
 }
+
+.spinner-growCustomStyles{
+    position: absolute;
+    top: 50vh;
+    left: 45vw;
+}
+
+
+@media screen and (max-width: 650px) {
+    .landingPageCont{
+        display: grid;
+        grid-template-rows: 60vh minmax(100vh,min-content);
+        
+    }
+  }

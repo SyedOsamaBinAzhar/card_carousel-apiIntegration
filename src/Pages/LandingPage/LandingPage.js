@@ -37,13 +37,14 @@ const LandingPage = () => {
 
     
     return (
-        <div>
             <div className="landingPageCont">
                 <div className="carouselRow">
                 {
                 carouselImages === "undefined" || carouselImages.length === 0
                 ?
-                null
+                <div className="spinner-grow spinner-growCustomStyles" role="status">
+                    <span className="sr-only">Loading...</span>
+                </div>
                 :
                 <Carousel carouselImages={carouselImages}/>
                 }
@@ -59,8 +60,6 @@ const LandingPage = () => {
                 </div>
 
             </div>
-
-        </div>
     )
 }
 

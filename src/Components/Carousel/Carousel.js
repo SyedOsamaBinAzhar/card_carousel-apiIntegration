@@ -11,13 +11,13 @@ const Carousel = (props) => {
       <div id="carouselExampleControls" style={{width:"100%",height:"100%"}} className="carousel slide" data-ride="carousel">
       <div className="carousel-inner" style={{width:"100%",height:"100%"}}>
         <div className="carousel-item carouselImgStyle active">
-          <img className="carouselImgStyle" src={props.carouselImages[0]} alt="First slide"/>
+          <img className="carouselImgStyle" src={carouselImages[0]} alt="First slide"/>
         </div>
         <div className="carousel-item carouselImgStyle">
-          <img className="carouselImgStyle" src={props.carouselImages[1]} alt="Second slide"/>
+          <img className="carouselImgStyle" src={carouselImages[1]} alt="Second slide"/>
         </div>
         <div className="carousel-item carouselImgStyle">
-          <img className="carouselImgStyle" src={props.carouselImages[2]} alt="Third slide"/>
+          <img className="carouselImgStyle" src={carouselImages[2]} alt="Third slide"/>
         </div>
       </div>
       <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
