@@ -1,11 +1,11 @@
 import React from 'react'
 import "./Carousel.css"
 
-
-
+//developer comments:
+//bootstrap carousel limitations:- 1) Dynamic images can't be rendered with slide functionality.
 const Carousel = (props) => {
+  //destructuring props
   const { carouselImages } = props
-  
 
     return (
       <div id="carouselExampleControls" style={{width:"100%",height:"100%"}} className="carousel slide" data-ride="carousel">
@@ -20,6 +20,7 @@ const Carousel = (props) => {
           <img className="carouselImgStyle" src={carouselImages[2]} alt="Third slide"/>
         </div>
       </div>
+      {/* controllers of carousel */}
       <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
         <span className="carousel-control-prev-icon" aria-hidden="true"></span>
         <span className="sr-only">Previous</span>
