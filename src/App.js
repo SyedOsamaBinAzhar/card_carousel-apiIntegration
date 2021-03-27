@@ -9,6 +9,11 @@ import LandingPage from './Pages/LandingPage/LandingPage';
 function App() {
   return (
     <div className="App">
+     
+     
+     
+     
+     
       <BrowserRouter>
       
       <Switch>

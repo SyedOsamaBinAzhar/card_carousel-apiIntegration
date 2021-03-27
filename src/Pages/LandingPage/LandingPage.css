@@ -1,0 +1,20 @@
+.landingPageCont{
+    display: grid;
+    grid-template-rows: 100vh minmax(100vh,min-content);
+    grid-template-columns: 5vw 90vw 5vw;
+    grid-template-areas: ". carouselRow ."
+                            ". cardRow .";
+    
+}
+.carouselRow{
+    grid-area: carouselRow;
+    background-color: aqua;
+}
+.cardRow{
+    grid-area: cardRow;
+    background-color: blue;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(25rem,min-content));
+    grid-gap: 2rem;
+
+}
